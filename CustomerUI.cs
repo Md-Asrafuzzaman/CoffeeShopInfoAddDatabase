@@ -107,7 +107,31 @@ namespace CoffeeShopDataStore
 
         private void UpdateCustomerInfo()
         {
-            
+            try
+            {// SQL connection 
+                string connectionString = @"Server=localhost; DataBase=CoffeeShop; Integrated Security=True";
+                SqlConnection sqlConnection = new SqlConnection(connectionString);
+                //Sql Command
+
+                string commandString = @"UPDATE Customer SET CustomerName ='" + customerNameTextBox.Text + "', CustomerAddress = '"+ customerAddressTextBox.Text + "',CustomerContact = '" + contactTextBox.Text + "' WHERE CustomerId ='" + customerIdTextBox.Text + "'";
+                SqlCommand sqlCommand = new SqlCommand(commandString, sqlConnection);
+
+                sqlConnection.Open();
+                int isExecute = sqlCommand.ExecuteNonQuery();
+                if (isExecute > 0)
+                {
+                    MessageBox.Show("Successfully Updated");
+                }
+                else
+                {
+                    MessageBox.Show("Updated Failed");
+                }
+
+                sqlConnection.Close();
+            } catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void SearchCustomerInfo()
         {

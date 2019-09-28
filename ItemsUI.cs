@@ -20,6 +20,31 @@ namespace CoffeeShopDataStore
 
         private void addButton_Click(object sender, EventArgs e)
         {
+            AddCustomerInfo();
+        }
+
+        private void showButton_Click(object sender, EventArgs e)
+        {
+            ShowCustomerInfo();
+        }
+
+        private void updateButton_Click(object sender, EventArgs e)
+        {
+            UpdateCustomerInfo();
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            SearchCustomerInfo();
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            DeleteCustomerInfo();
+        }
+
+        private void AddCustomerInfo()
+        {
             // SQL connection 
             string connectionString = @"Server=localhost; DataBase=CoffeeShop; Integrated Security=True";
             SqlConnection sqlConnection = new SqlConnection(connectionString);
@@ -45,7 +70,7 @@ namespace CoffeeShopDataStore
 
         }
 
-        private void showButton_Click(object sender, EventArgs e)
+        private void ShowCustomerInfo()
         {
             // SQL connection 
             string connectionString = @"Server=localhost; DataBase=CoffeeShop; Integrated Security=True";
@@ -73,7 +98,7 @@ namespace CoffeeShopDataStore
             sqlConnection.Close();
         }
 
-        private void searchButton_Click(object sender, EventArgs e)
+        private void SearchCustomerInfo()
         {
             // SQL connection 
             string connectionString = @"Server=localhost; DataBase=CoffeeShop; Integrated Security=True";
@@ -101,7 +126,7 @@ namespace CoffeeShopDataStore
             sqlConnection.Close();
         }
 
-        private void deleteButton_Click(object sender, EventArgs e)
+        private void DeleteCustomerInfo()
         {
             // SQL connection 
             string connectionString = @"Server=localhost; DataBase=CoffeeShop; Integrated Security=True";
@@ -127,7 +152,7 @@ namespace CoffeeShopDataStore
 
         }
 
-        private void updateButton_Click(object sender, EventArgs e)
+        private void UpdateCustomerInfo()
         {
             // SQL connection 
             string connectionString = @"Server=localhost; DataBase=CoffeeShop; Integrated Security=True";
