@@ -20,37 +20,37 @@ namespace CoffeeShopDataStore
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            AddCustomerInfo();
+            AddOrderInfo();
         }
 
         private void showButton_Click(object sender, EventArgs e)
         {
-            ShowCustomerInfo();
+            ShowOrderList();
         }
 
         private void updateButton_Click(object sender, EventArgs e)
         {
-            UpdateCustomerInfo();
+            UpdateOrderInfo();
         }
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            SearchCustomerInfo();
+            SearchOrder();
         }
 
         private void deleteButton_Click(object sender, EventArgs e)
         {
-            DeleteCustomerInfo();
+            DeleteOrder();
         }
 
-        private void AddCustomerInfo()
+        private void AddOrderInfo()
         {
             try
             { // SQL connection 
                 string connectionString = @"Server=localhost; DataBase=CoffeeShop; Integrated Security=True";
                 SqlConnection sqlConnection = new SqlConnection(connectionString);
                 //Sql Command
-
+                
                 string commandString = "INSERT INTO Orders(CustomerName,IteamName,OrderQuantity,TotalPrice) VALUES ('" + customerNameTextBox.Text + "','" + iteamNameTextBox.Text + "','" + orderQuantityTextBox.Text + "','" + totalOrderPriceTextBox.Text + "')";
                 SqlCommand sqlCommand = new SqlCommand(commandString, sqlConnection);
 
@@ -72,7 +72,7 @@ namespace CoffeeShopDataStore
                 MessageBox.Show(ex.Message);
             }
         }
-        private void ShowCustomerInfo()
+        private void ShowOrderList()
         {
             try
             { // SQL connection 
@@ -106,7 +106,7 @@ namespace CoffeeShopDataStore
             }
         }
 
-        private void UpdateCustomerInfo()
+        private void UpdateOrderInfo()
         {
             try
             {// SQL connection 
@@ -135,7 +135,7 @@ namespace CoffeeShopDataStore
                 MessageBox.Show(ex.Message);
             }
         }
-        private void SearchCustomerInfo()
+        private void SearchOrder()
         {
             try
             {// SQL connection 
@@ -168,7 +168,7 @@ namespace CoffeeShopDataStore
                 MessageBox.Show(ex.Message);
             }
         }
-        private void DeleteCustomerInfo()
+        private void DeleteOrder()
         {
             try
             { // SQL connection 
